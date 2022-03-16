@@ -1,0 +1,25 @@
+<%- include('./header') %>
+<% if (msg)  {%>
+    <aside>
+        <p>
+            <em><%= msg %></em>
+        </p>
+    </aside>
+<% } %>
+
+<form method="POST" action="/login">
+    <p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+    </p>
+
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+    </p>
+
+    <p>
+        <input type="submit" value="Login" />
+    </p>
+</form>
+<%- include('./footer') %>

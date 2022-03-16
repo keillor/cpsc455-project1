@@ -1,0 +1,45 @@
+<%- include('header') %>
+<form method="POST" action="/deposit">
+    <header>
+        Deposit money for <%= user.username %>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Account ID</th>
+                <th>Amount ($)</th>
+            </tr>
+        </thead>
+        <% for (const account of accounts) { %>
+            <tr>
+                <td>
+                    <label for="account">
+                        <%= account.id %>
+                    </label>
+                    <input
+                        type="hidden" id="account"
+                        name="deposits[<%= account.id %>][id]"
+                        value="<%= account.id %>" />
+                </td>
+                <td>
+                    <input
+                        type="number"
+                        name="deposits[<%= account.id %>][amount]"
+                        min="0" step="0.01"  />
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <p>
+        <input type="submit" value="Deposit" />
+    </p>
+</form>
+<p>
+    <a href="/balance"><i>Return to balances</i></a>
+</p>
+<form method="POST" action="/logout">
+    <p>
+        <input type="submit" value="Logout" />
+    </p>
+</form>
+<%- include('footer') %>
