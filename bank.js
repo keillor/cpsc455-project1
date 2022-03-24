@@ -15,7 +15,7 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieSession({
-  secret: 'cpsc455',
+  secret: 'cpsc455-csrf',
   maxAge: 20 * 60 * 1000 // 20 minutes
 }))
 
