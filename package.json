@@ -1,26 +1,25 @@
 {
-  "name": "cpsc455-csrf",
+  "name": "cpsc455-project1",
   "version": "1.0.0",
-  "description": "CPSC 455 - Spring 2022",
+  "description": "CPSC 455 - Fall 2024",
   "scripts": {
-    "start": "npx nodemon bank.js"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProfAvery/cpsc455-csrf.git"
+    "url": "git+https://github.com/ProfAvery/cpsc455-project1.git"
   },
   "author": "Kenytt Avery",
   "license": "UNLICENSED",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "better-sqlite3": "^7.5.0",
-    "cookie-parser": "^1.4.6",
-    "cookie-session": "^2.0.0",
-    "csurf": "^1.11.0",
+    "better-sqlite3": "^11.3.0",
+    "cookie-session": "^2.1.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.2"
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^3.1.4"
   }
 }

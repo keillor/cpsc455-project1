@@ -1,25 +1,25 @@
 const fs = require('fs')
 const os = require('os')
 
-const cookieSession = require('cookie-session')
 const express = require('express')
+const morgan = require('morgan')
+const cookieSession = require('cookie-session')
 const bcrypt = require('bcrypt')
-
 const Database = require('better-sqlite3')
 
 const PORT = 8080
-
 const app = express()
 
 app.set('view engine', 'ejs')
+app.use(morgan("dev"))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cookieSession({
-  secret: 'cpsc455-csrf',
+  secret: 'cpsc455-project1',
   maxAge: 20 * 60 * 1000 // 20 minutes
 }))
 
-const db = new Database('./bank.db', { verbose: console.log })
+const db = new Database(':memory:', { verbose: console.log })
 db.pragma('foreign_keys = ON')
 
 app.get('/', (req, res) => {
